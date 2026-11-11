@@ -129,9 +129,9 @@
   "contact": {
     "id": "contact",
     "index": "04",
-    "eyebrow": "Request access",
-    "title": "Want a license?",
-    "body": "Leave an email and we will send the next step for smartSQL. This form stays in the browser. Nothing is transmitted.",
+    "eyebrow": "Start a project",
+    "title": "Want us to make something for you?",
+    "body": "Tell us what you want built. Leave an email and we will reply with a next step. This form stays in the browser. Nothing is transmitted.",
     "emailLabel": "Your email address",
     "emailPlaceholder": "you@company.com",
     "submitLabel": "Request access",
