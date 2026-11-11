@@ -34,6 +34,7 @@ export function ProductDoc({ product }: ProductDocProps) {
       <p className="doc-lead">{product.description}</p>
       <div className="doc-layout">
         <nav className="doc-nav" aria-label={products.docEyebrow}>
+          <a href="#documents">{products.pdfHeading}</a>
           {product.docs.map((section) => (
             <a key={section.id} href={`#${section.id}`}>
               {section.heading}
@@ -41,6 +42,21 @@ export function ProductDoc({ product }: ProductDocProps) {
           ))}
         </nav>
         <div className="doc-body">
+          <section id="documents">
+            <h2>{products.pdfHeading}</h2>
+            {product.pdfs.length === 0 ? (
+              <p>{products.pdfEmpty}</p>
+            ) : (
+              <div className="doc-files">
+                {product.pdfs.map((pdf) => (
+                  <a key={pdf.file} href={pdf.file} target="_blank" rel="noopener noreferrer">
+                    <span>{pdf.title}</span>
+                    <span>{products.pdfOpen}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+          </section>
           {product.docs.map((section) => (
             <section key={section.id} id={section.id}>
               <h2>{section.heading}</h2>

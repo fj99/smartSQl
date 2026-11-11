@@ -1167,6 +1167,36 @@
     font-size: 1.05rem;
     line-height: 1.7;
   }
+
+  .doc-files {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .doc-files a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .doc-files a span:first-child {
+    font-size: 1.15rem;
+    letter-spacing: -0.03em;
+  }
+
+  .doc-files a span:last-child {
+    flex: none;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lime);
+  }
 }
 
 @keyframes marquee {

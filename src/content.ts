@@ -13,6 +13,11 @@ export interface DocSection {
   paragraphs: string[];
 }
 
+export interface ProductPdf {
+  title: string;
+  file: string;
+}
+
 export interface Product {
   number: string;
   name: string;
@@ -24,6 +29,7 @@ export interface Product {
   color: string;
   secondary: string;
   docs: DocSection[];
+  pdfs: ProductPdf[];
 }
 
 export interface Teammate {
@@ -93,6 +99,9 @@ export interface SiteContent {
     docLinkLabel: string;
     docMissingTitle: string;
     docMissingBody: string;
+    pdfHeading: string;
+    pdfOpen: string;
+    pdfEmpty: string;
     items: Product[];
   };
   team: {
@@ -173,6 +182,9 @@ function loadContent(value: SiteContent): SiteContent {
   requireText(value.products.docLinkLabel, "products.docLinkLabel");
   requireText(value.products.docMissingTitle, "products.docMissingTitle");
   requireText(value.products.docMissingBody, "products.docMissingBody");
+  requireText(value.products.pdfHeading, "products.pdfHeading");
+  requireText(value.products.pdfOpen, "products.pdfOpen");
+  requireText(value.products.pdfEmpty, "products.pdfEmpty");
 
   const slugs = new Set<string>();
   value.products.items.forEach((item, index) => {
@@ -198,6 +210,14 @@ function loadContent(value: SiteContent): SiteContent {
       section.paragraphs.forEach((paragraph, paragraphIndex) => {
         requireText(paragraph, `${path}.paragraphs[${paragraphIndex}]`);
       });
+    });
+    item.pdfs.forEach((pdf, pdfIndex) => {
+      const path = `products.items[${index}].pdfs[${pdfIndex}]`;
+      requireText(pdf.title, `${path}.title`);
+      requireText(pdf.file, `${path}.file`);
+      if (!pdf.file.toLowerCase().endsWith(".pdf")) {
+        throw new Error(`content.json ${path}.file must point to a .pdf file`);
+      }
     });
   });
 

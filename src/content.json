@@ -66,6 +66,9 @@
     "docLinkLabel": "Read the documentation for",
     "docMissingTitle": "This product is not in the catalog.",
     "docMissingBody": "Go back and open a product that is listed.",
+    "pdfHeading": "Documents",
+    "pdfOpen": "Open PDF",
+    "pdfEmpty": "PDFs for this product will be listed here.",
     "items": [
       {
         "number": "01",
@@ -77,6 +80,7 @@
         "scene": "lattice",
         "color": "#c8ff43",
         "secondary": "#f4fff0",
+        "pdfs": [],
         "docs": [
           {
             "id": "overview",
@@ -122,6 +126,7 @@
         "scene": "ribbon",
         "color": "#ff6534",
         "secondary": "#ffd3bd",
+        "pdfs": [],
         "docs": [
           {
             "id": "overview",
@@ -159,6 +164,7 @@
         "scene": "knot",
         "color": "#9b8cff",
         "secondary": "#ddd8ff",
+        "pdfs": [],
         "docs": [
           {
             "id": "overview",
