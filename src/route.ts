@@ -1,16 +1,27 @@
 import { useEffect, useState } from "react";
 
+function siteBase() {
+  return import.meta.env.BASE_URL.replace(/\/$/, "");
+}
+
+function sitePath(pathname: string) {
+  const base = siteBase();
+  if (!base || !pathname.startsWith(base)) return pathname;
+  const rest = pathname.slice(base.length);
+  return rest.startsWith("/") ? rest : `/${rest}`;
+}
+
 export function productPath(slug: string) {
-  return `/products/${slug}`;
+  return `${import.meta.env.BASE_URL}products/${slug}`;
 }
 
 export function productSlug(pathname: string) {
-  const match = pathname.match(/^\/products\/([^/]+)\/?$/);
+  const match = sitePath(pathname).match(/^\/products\/([^/]+)\/?$/);
   return match ? decodeURIComponent(match[1]) : null;
 }
 
 export function homeHref(href: string) {
-  return href.startsWith("#") ? `/${href}` : href;
+  return href.startsWith("#") ? `${import.meta.env.BASE_URL}${href}` : href;
 }
 
 export function usePathname() {
