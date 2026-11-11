@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "title": "smartSQL — Software for people who work in data",
+    "description": "smartSQL designs and sells software for teams who write, model, and ship SQL. Meet the current product, the catalog that came before it, and the people building what is next."
+  },
+  "brand": {
+    "name": "smartSQL",
+    "mark": "S/01",
+    "homeLabel": "smartSQL home",
+    "location": "Remote · worldwide",
+    "status": "Licenses open"
+  },
+  "navigation": {
+    "menuLabel": "Menu",
+    "closeLabel": "Close",
+    "ariaLabel": "Primary navigation",
+    "items": [
+      { "label": "Platform", "href": "#platform" },
+      { "label": "Products", "href": "#products" },
+      { "label": "Team", "href": "#team" },
+      { "label": "Contact", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "spark": "✦",
+    "eyebrow": "Software company for data teams",
+    "titleLead": "SQL,",
+    "titleAccent": "with a pulse.",
+    "body": "We build and sell tools that keep queries, models, and pipelines close enough to touch. smartSQL is the workspace we ship today.",
+    "cta": "See the software",
+    "ctaIcon": "↘",
+    "ctaHref": "#products",
+    "scrollLabel": "Scroll to the platform",
+    "scrollHref": "#platform",
+    "sceneLabel": "Interactive particle model of the selected product. Drag to rotate, or use the arrow keys.",
+    "sceneHint": "Drag the model",
+    "hintIcon": "↔",
+    "pauseLabel": "Pause motion",
+    "playLabel": "Play motion",
+    "modeLabel": "Choose a product",
+    "specimenPrefix": "Live model —",
+    "fpsLabel": "Realtime",
+    "edition": "Catalog 01 / 2026"
+  },
+  "platform": {
+    "id": "platform",
+    "index": "01",
+    "eyebrow": "The platform",
+    "title": "The database, close enough to touch.",
+    "body": "smartSQL is for teams who are done treating the database as a ticket queue. The workspace we sell puts the question, the schema, and the result in one place, so the work stays legible as it grows.",
+    "marquee": ["Query", "Model", "Ship", "Observe"],
+    "marqueeMark": "✦",
+    "stat": "03",
+    "statLabel": "Products in the catalog"
+  },
+  "products": {
+    "id": "products",
+    "index": "02",
+    "countLabel": "(03)",
+    "eyebrow": "Selected software",
+    "title": "What we sell, and what we shipped before.",
+    "openLabel": "Show this product",
+    "arrow": "↗",
+    "items": [
+      {
+        "number": "01",
+        "name": "smartSQL",
+        "category": "SQL workspace",
+        "year": "2026",
+        "description": "The product for sale now. A workspace for writing and reviewing SQL with the schema held in view.",
+        "scene": "lattice",
+        "color": "#c8ff43",
+        "secondary": "#f4fff0"
+      },
+      {
+        "number": "02",
+        "name": "Ledgerline",
+        "category": "Pipeline observability",
+        "year": "2024",
+        "description": "A past product for watching data jobs the way an operator watches a live signal.",
+        "scene": "ribbon",
+        "color": "#ff6534",
+        "secondary": "#ffd3bd"
+      },
+      {
+        "number": "03",
+        "name": "Northframe",
+        "category": "Schema design",
+        "year": "2023",
+        "description": "A past product for drawing a model before the tables settled into place.",
+        "scene": "knot",
+        "color": "#9b8cff",
+        "secondary": "#ddd8ff"
+      }
+    ]
+  },
+  "team": {
+    "id": "team",
+    "index": "03",
+    "eyebrow": "The team",
+    "title": "The people behind the software.",
+    "items": [
+      {
+        "number": "01",
+        "name": "Jordan Hale (sample)",
+        "role": "Founder",
+        "body": "Sample seat. Sets the product line and the promise we make to the teams who buy it."
+      },
+      {
+        "number": "02",
+        "name": "Riley Cho (sample)",
+        "role": "Product",
+        "body": "Sample seat. Turns database work into software a team can actually adopt."
+      },
+      {
+        "number": "03",
+        "name": "Avery Singh (sample)",
+        "role": "Engineering",
+        "body": "Sample seat. Builds the query surface and the parts of it that have to stay fast."
+      },
+      {
+        "number": "04",
+        "name": "Morgan Ellis (sample)",
+        "role": "Design",
+        "body": "Sample seat. Gives the tools a shape that feels as considered as the SQL inside them."
+      }
+    ]
+  },
+  "contact": {
+    "id": "contact",
+    "index": "04",
+    "eyebrow": "Request access",
+    "title": "Want a license?",
+    "body": "Leave an email and we will send the next step for smartSQL. This form stays in the browser. Nothing is transmitted.",
+    "emailLabel": "Your email address",
+    "emailPlaceholder": "you@company.com",
+    "submitLabel": "Request access",
+    "submitIcon": "↗",
+    "emptyMessage": "Add an email so we know where to reply.",
+    "invalidMessage": "That address needs a name, an @ sign, and a domain.",
+    "successMessage": "Request noted. We will reply to that address.",
+    "directLabel": "Or write directly",
+    "email": "hello@smartsql.dev"
+  },
+  "footer": {
+    "copyright": "© 2026 smartSQL",
+    "note": "Software for people who work in SQL",
+    "top": "Back to the field ↑"
+  }
+}
