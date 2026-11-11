@@ -61,6 +61,11 @@
     "title": "What we sell, and what we shipped before.",
     "openLabel": "Show this product",
     "arrow": "↗",
+    "docBack": "Back to the catalog",
+    "docEyebrow": "Documentation",
+    "docLinkLabel": "Read the documentation for",
+    "docMissingTitle": "This product is not in the catalog.",
+    "docMissingBody": "Go back and open a product that is listed.",
     "items": [
       {
         "number": "01",
@@ -68,9 +73,44 @@
         "category": "SQL workspace",
         "year": "2026",
         "description": "The product for sale now. A workspace for writing and reviewing SQL with the schema held in view.",
+        "slug": "smartsql",
         "scene": "lattice",
         "color": "#c8ff43",
-        "secondary": "#f4fff0"
+        "secondary": "#f4fff0",
+        "docs": [
+          {
+            "id": "overview",
+            "heading": "Overview",
+            "paragraphs": [
+              "smartSQL is the workspace we sell for writing, reviewing, and sharing SQL without losing the schema that gives a query its meaning.",
+              "Add, remove, or reorder sections in this list to grow the documentation. Each section needs an id, a heading, and one or more paragraphs."
+            ]
+          },
+          {
+            "id": "workspace",
+            "heading": "The workspace",
+            "paragraphs": [
+              "The editor keeps the question, the tables it touches, and the result in one view. A reviewer can see the shape of a query before reading every line.",
+              "Saved work stays attached to the model it was written against, so a later change in the schema is visible next to the statement that depends on it."
+            ]
+          },
+          {
+            "id": "review",
+            "heading": "Review",
+            "paragraphs": [
+              "A query is ready to share when the intent, the joins, and the expected result are all still readable. smartSQL keeps those three in the same place.",
+              "Use this section for the review checklist your team actually follows. Add a paragraph for each rule you want readers to see."
+            ]
+          },
+          {
+            "id": "extend",
+            "heading": "Extending this page",
+            "paragraphs": [
+              "This page is the home for the long-form notes about smartSQL. Drop in guides, examples, and operating details as separate sections.",
+              "Nothing on this page is fixed in the layout. The catalog card opens whatever sections you list for this product."
+            ]
+          }
+        ]
       },
       {
         "number": "02",
@@ -78,9 +118,36 @@
         "category": "Pipeline observability",
         "year": "2024",
         "description": "A past product for watching data jobs the way an operator watches a live signal.",
+        "slug": "ledgerline",
         "scene": "ribbon",
         "color": "#ff6534",
-        "secondary": "#ffd3bd"
+        "secondary": "#ffd3bd",
+        "docs": [
+          {
+            "id": "overview",
+            "heading": "Overview",
+            "paragraphs": [
+              "Ledgerline was our product for watching data jobs as a live signal: what started, what stalled, and what changed the result downstream.",
+              "The notes below are a starting shelf. Replace them with the runbooks and references you want to keep for this product."
+            ]
+          },
+          {
+            "id": "signal",
+            "heading": "Reading the signal",
+            "paragraphs": [
+              "Each job leaves a trace you can follow from the first read to the last write. The point is to see the break without reconstructing the pipeline from logs.",
+              "Add the signals your operators actually watch, one section at a time."
+            ]
+          },
+          {
+            "id": "incidents",
+            "heading": "When a job fails",
+            "paragraphs": [
+              "A failed run should say which step stopped, which inputs it had already accepted, and which outputs never landed.",
+              "Use the paragraphs here for the incident notes you want on call to find first."
+            ]
+          }
+        ]
       },
       {
         "number": "03",
@@ -88,9 +155,36 @@
         "category": "Schema design",
         "year": "2023",
         "description": "A past product for drawing a model before the tables settled into place.",
+        "slug": "northframe",
         "scene": "knot",
         "color": "#9b8cff",
-        "secondary": "#ddd8ff"
+        "secondary": "#ddd8ff",
+        "docs": [
+          {
+            "id": "overview",
+            "heading": "Overview",
+            "paragraphs": [
+              "Northframe was our product for drawing a model before the tables locked in. It kept names, relationships, and open questions in one picture.",
+              "Treat this page as the binder for that work. Add a section whenever there is more to explain."
+            ]
+          },
+          {
+            "id": "model",
+            "heading": "Shaping a model",
+            "paragraphs": [
+              "Start from the questions the data has to answer, then name the entities that carry those answers. Northframe held that conversation before the migration.",
+              "Document the modeling rules you still want people to follow, even if the product itself is no longer the one you sell."
+            ]
+          },
+          {
+            "id": "handoff",
+            "heading": "Handing a model to SQL",
+            "paragraphs": [
+              "A model is ready to become tables when every relationship has a direction, a name, and a reason. The handoff notes live in this section.",
+              "Add examples of models that became schemas, and what you would draw differently now."
+            ]
+          }
+        ]
       }
     ]
   },

@@ -7,15 +7,23 @@ export interface NavItem {
   href: string;
 }
 
+export interface DocSection {
+  id: string;
+  heading: string;
+  paragraphs: string[];
+}
+
 export interface Product {
   number: string;
   name: string;
   category: string;
   year: string;
   description: string;
+  slug: string;
   scene: SceneKind;
   color: string;
   secondary: string;
+  docs: DocSection[];
 }
 
 export interface Teammate {
@@ -80,6 +88,11 @@ export interface SiteContent {
     title: string;
     openLabel: string;
     arrow: string;
+    docBack: string;
+    docEyebrow: string;
+    docLinkLabel: string;
+    docMissingTitle: string;
+    docMissingBody: string;
     items: Product[];
   };
   team: {
@@ -155,11 +168,37 @@ function loadContent(value: SiteContent): SiteContent {
     requireText(item.href, `navigation.items[${index}].href`);
   });
 
+  requireText(value.products.docBack, "products.docBack");
+  requireText(value.products.docEyebrow, "products.docEyebrow");
+  requireText(value.products.docLinkLabel, "products.docLinkLabel");
+  requireText(value.products.docMissingTitle, "products.docMissingTitle");
+  requireText(value.products.docMissingBody, "products.docMissingBody");
+
+  const slugs = new Set<string>();
   value.products.items.forEach((item, index) => {
     requireText(item.name, `products.items[${index}].name`);
     requireText(item.category, `products.items[${index}].category`);
     requireText(item.description, `products.items[${index}].description`);
+    requireText(item.slug, `products.items[${index}].slug`);
     asScene(item.scene, index);
+    if (slugs.has(item.slug)) {
+      throw new Error(`content.json reuses the product slug "${item.slug}"`);
+    }
+    slugs.add(item.slug);
+    if (item.docs.length === 0) {
+      throw new Error(`content.json products.items[${index}].docs needs at least one section`);
+    }
+    item.docs.forEach((section, sectionIndex) => {
+      const path = `products.items[${index}].docs[${sectionIndex}]`;
+      requireText(section.id, `${path}.id`);
+      requireText(section.heading, `${path}.heading`);
+      if (section.paragraphs.length === 0) {
+        throw new Error(`content.json ${path}.paragraphs needs at least one paragraph`);
+      }
+      section.paragraphs.forEach((paragraph, paragraphIndex) => {
+        requireText(paragraph, `${path}.paragraphs[${paragraphIndex}]`);
+      });
+    });
   });
 
   value.team.items.forEach((item, index) => {

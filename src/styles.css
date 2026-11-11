@@ -730,23 +730,37 @@
     gap: 0.9rem;
   }
 
-  .catalog-grid button {
-    container-type: inline-size;
-    width: 100%;
-    min-height: 34rem;
+  .catalog-grid article {
+    position: relative;
     display: grid;
     grid-template-columns: 3rem 1fr auto;
-    grid-template-rows: 1fr auto auto;
+    grid-template-rows: minmax(22rem, 1fr) auto auto;
+    min-height: 34rem;
     border: 1px solid var(--line);
     background: var(--ink-raise);
     color: inherit;
-    text-align: left;
     overflow: hidden;
+    container-type: inline-size;
     transition: border-color 0.25s ease;
   }
 
-  .catalog-grid article.is-active button,
-  .catalog-grid button:hover {
+  .catalog-grid button {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    width: 100%;
+    min-height: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: left;
+  }
+
+  .catalog-grid article.is-active,
+  .catalog-grid article:hover,
+  .catalog-grid article:focus-within {
     border-color: var(--swatch);
   }
 
@@ -834,6 +848,7 @@
   .card-foot {
     grid-column: 2 / 4;
     grid-row: 3;
+    z-index: 1;
     display: flex;
     align-items: end;
     justify-content: space-between;
@@ -854,8 +869,9 @@
       border-color 0.2s ease;
   }
 
-  .catalog-grid button:hover .card-foot i,
-  .catalog-grid article.is-active .card-foot i {
+  .catalog-grid article:hover .card-foot i,
+  .catalog-grid article.is-active .card-foot i,
+  .card-foot:hover i {
     background: var(--swatch);
     border-color: var(--swatch);
     color: var(--ink);
@@ -1047,6 +1063,109 @@
 
   .colophon a {
     color: var(--text);
+  }
+
+  .doc {
+    min-height: 100svh;
+    padding: calc(var(--header-h) + 3.5rem) var(--gutter) 5rem;
+    background: var(--ink);
+  }
+
+  .doc-back,
+  .doc-kicker,
+  .doc-meta,
+  .doc-nav a {
+    font-family: var(--mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .doc-back,
+  .doc-kicker,
+  .doc-nav a {
+    font-size: 0.68rem;
+  }
+
+  .doc-back {
+    display: inline-flex;
+    margin-bottom: 2.5rem;
+    color: var(--lime);
+  }
+
+  .doc-kicker {
+    margin-bottom: 1rem;
+    color: var(--muted);
+  }
+
+  .doc h1 {
+    max-width: 14ch;
+    margin: 0;
+    font-size: clamp(3.4rem, 7vw, 6.5rem);
+    font-weight: 500;
+    letter-spacing: -0.07em;
+    line-height: 0.95;
+  }
+
+  .doc-meta {
+    display: flex;
+    gap: 1.4rem;
+    margin: 1.4rem 0 0;
+    font-size: 0.68rem;
+    color: var(--muted);
+  }
+
+  .doc-lead {
+    max-width: 40rem;
+    margin: 1.6rem 0 0;
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  .doc-layout {
+    display: grid;
+    grid-template-columns: minmax(11rem, 16rem) minmax(0, 46rem);
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+
+  .doc-nav {
+    position: sticky;
+    top: calc(var(--header-h) + 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .doc-nav a {
+    color: var(--muted);
+  }
+
+  .doc-nav a:hover {
+    color: var(--text);
+  }
+
+  .doc-body section {
+    padding: 2.2rem 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: calc(var(--header-h) + 1rem);
+  }
+
+  .doc-body h2 {
+    max-width: none;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.15;
+  }
+
+  .doc-body p {
+    max-width: 42rem;
+    margin: 1rem 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
 }
 
@@ -1249,6 +1368,7 @@
   }
 
   .catalog-grid article {
+    min-height: 26rem;
     margin-bottom: 0.9rem;
   }
 
@@ -1259,10 +1379,6 @@
 
   .glyph {
     min-height: 16rem;
-  }
-
-  .catalog-grid button {
-    min-height: 26rem;
   }
 
   .orbit {
@@ -1298,6 +1414,19 @@
 
   .colophon {
     padding-block: 1.3rem;
+  }
+
+  .doc-layout {
+    display: block;
+  }
+
+  .doc-nav {
+    position: static;
+    margin-bottom: 2rem;
+  }
+
+  .doc h1 {
+    font-size: clamp(2.8rem, 14vw, 4.4rem);
   }
 }
 

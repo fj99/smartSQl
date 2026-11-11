@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { content } from "../content";
+import { homeHref } from "../route";
 
 export function Header() {
   const { brand, navigation } = content;
@@ -7,14 +8,14 @@ export function Header() {
 
   return (
     <header className="topbar">
-      <a className="brand" href="#top" aria-label={brand.homeLabel} onClick={() => setOpen(false)}>
+      <a className="brand" href={homeHref("#top")} aria-label={brand.homeLabel} onClick={() => setOpen(false)}>
         <span className="brand-mark">{brand.mark}</span>
         {brand.name}
       </a>
       <p className="location">{brand.location}</p>
       <nav className={open ? "is-open" : undefined} aria-label={navigation.ariaLabel}>
         {navigation.items.map((item) => (
-          <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+          <a key={item.href} href={homeHref(item.href)} onClick={() => setOpen(false)}>
             {item.label}
           </a>
         ))}
