@@ -32,7 +32,9 @@ export function Contact() {
       <SectionLabel index={contact.index} label={contact.eyebrow} />
       <div className="signal">
         <div>
-          <h2>{contact.title}</h2>
+          <h2>
+            <span>{contact.title}</span>
+          </h2>
           <p>{contact.body}</p>
         </div>
         <form onSubmit={onSubmit} noValidate>

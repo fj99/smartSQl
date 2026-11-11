@@ -633,7 +633,20 @@
 
   .signal h2 {
     max-width: 12ch;
-    line-height: 1.28;
+    line-height: 1.05;
+  }
+
+  .signal h2 span {
+    background: var(--lime);
+    color: var(--ink);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0.08em 0.12em 0.14em;
+  }
+
+  .signal h2 span::selection {
+    background: var(--lime);
+    color: var(--ink);
   }
 
   .statement p,
