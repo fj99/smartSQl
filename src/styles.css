@@ -631,6 +631,11 @@
     line-height: 0.9;
   }
 
+  .signal h2 {
+    max-width: 12ch;
+    line-height: 1.28;
+  }
+
   .statement p,
   .signal > div > p {
     max-width: 38rem;
